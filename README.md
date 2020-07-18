@@ -6,8 +6,7 @@ docker命令
 
     $ docker run --gpus all --entrypoint=/bin/bash \
     $ -it -d -v [local mount dir]:[target dir in docker]\
-    $ -e TZ=Asia/Beijing --name [name] \
-    $\[docker image\]
+    $ -e TZ=Asia/Beijing --name [name] [docker image]
 
 git 命令
 --------
