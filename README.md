@@ -69,3 +69,14 @@ Horovod安装方法
 直接从Docker官方仓库拉取大型镜像不可取，需要配置[镜像加速](https://developer.aliyun.com/article/752958?spm=a2c6h.14164896.0.0.165bbf44ErrAfl)。
 
 保险起见，需要安装[Nvidia-Docker](https://github.com/NVIDIA/nvidia-docker)。
+
+vim8原生插件管理使用
+----------------------
+`mkdir ~/.vim/pack/[name]/[start, opt]`
+
+`:helptags ~/.vim/pack/[name]/[start, opt]`
+
+`:helptags ALL`
+
+
+
