@@ -11,6 +11,10 @@ docker命令
 git 命令
 --------
 
+拉取远端代码并强制覆盖本地代码
+`git fetch --all`
+`git reset --hard origin/master`
+
 查看是否有远程关联仓库
 `git remote -v ` 
 
