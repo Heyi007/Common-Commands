@@ -5,7 +5,7 @@ docker命令
 从镜像启动容器
 
     $ docker run --ipc host --gpus all --entrypoint=/bin/bash \
-    $ -it -d -v [local mount dir]:[target dir in docker]\
+    $ -it -d -v [local mount dir]:[target dir in docker] -p 127.0.0.1:80:80\
     $ -e TZ=Asia/Beijing --name [name] [docker image]
     
 删除本地镜像
@@ -154,4 +154,5 @@ f: 打开和关闭文件过滤器
 q: 关闭NERDTree
 
 A: 全屏显示NERDTree，或者关闭全屏
+
 
