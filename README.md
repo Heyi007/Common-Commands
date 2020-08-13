@@ -5,7 +5,7 @@ docker命令
 从镜像启动容器
 
     $ docker run --ipc host --gpus all --entrypoint=/bin/bash \
-    $ -it -d -v [local mount dir]:[target dir in docker] -p 127.0.0.1:80:80\
+    $ -it -d -v [local mount dir]:[target dir in docker] -p [ip]:[port]:[target port]\
     $ -e TZ=Asia/Beijing --name [name] [docker image]
     
 删除本地镜像
@@ -15,7 +15,7 @@ docker命令
 将容器提交为镜像
 
     $ docker commit -m "message" -a "heyi" container_id [repo[:TAG]]
-    $ example docker commit -m "horovod-tensorflow2.1.0-pytorch1.4.0-cuda10" -a "heyi" 8d5cf23df4ad cr.d.xiaomi.net/heyi/horovod
+    $ example docker commit -m "horovod-tensorflow2.1.0-pytorch1.4.0-cuda10" -a "heyi" 8d5cf23df4ad [docker repo address]
     
 
 git 命令
