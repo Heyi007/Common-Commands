@@ -97,7 +97,7 @@ vim8原生插件管理使用
 
 NerdTree使用方法：
 
-NERDTree的常用快捷键：
+NERDTree的常用快捷键，[详细命令](https://www.jianshu.com/p/28bd9def1235)：
 
 F3：自定义启用/隐藏目录树
 
