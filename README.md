@@ -7,6 +7,10 @@ docker命令
     $ docker run --ipc host --gpus all --entrypoint=/bin/bash \
     $ -it -d -v [local mount dir]:[target dir in docker] -p [ip]:[port]:[target port]\
     $ -e TZ=Asia/Beijing --name [name] [docker image]
+
+启动gdb调试
+
+    $ docker run --cap-add=SYS_PTRACE --security-opt seccomp=unconfined
     
 删除本地镜像
 
@@ -15,7 +19,7 @@ docker命令
 将容器提交为镜像
 
     $ docker commit -m "message" -a "heyi" container_id [repo[:TAG]]
-    $ example docker commit -m "horovod-tensorflow2.1.0-pytorch1.4.0-cuda10" -a "heyi" 8d5cf23df4ad [docker repo address]
+    $ example docker commit -m "horovod-tensorflow2.1.0-pytorch1.4.0-cuda10" -a "heyi" imageid [docker repo address]
     
 
 git 命令
@@ -79,9 +83,9 @@ CUDA
 
 Horovod安装方法
 ------------------
-[看官方文档，看官方文档，看官方文档](https://github.com/horovod/horovod#running-horovod)（重说三！！！）
+[看官方文档](https://github.com/horovod/horovod#running-horovod)
 
-人生苦短，请用Docker，最简单的安装方法，使用Horovod官方给的[Docker镜像](https://github.com/horovod/horovod/blob/master/docs/docker.rst)。
+最简单的安装方法，使用Horovod官方给的[Docker镜像](https://github.com/horovod/horovod/blob/master/docs/docker.rst)。
 
 直接从Docker官方仓库拉取大型镜像不可取，需要配置[镜像加速](https://developer.aliyun.com/article/752958?spm=a2c6h.14164896.0.0.165bbf44ErrAfl)。
 
