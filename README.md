@@ -1,5 +1,52 @@
 # Common-Commands
 
+使用gdb调试python底层错误
+-----------
+注意：在docker中启用gdb调试需要在启动container时指定--cap-add和--security-opt选项，详见docker命令部分。
+
+[gdb调试python教程1](https://wiki.python.org/moin/DebuggingWithGdb)
+
+[gdb调试python教程2](https://confluence.desy.de/display/FSEC/Debugging+Python#:~:text=If%20the%20python%20macros%20return,attached%20to%20the%20same%20process.)
+
+#### 两种启动gdb的方法:
+
+1.直接启动
+
+    $ gdb -ex r --args python your-python-file --[python-file args]
+    
+2.启动python脚本后，attach gdb到其所在的进程：
+
+    $ gdb -p python-pid
+    
+    
+#### 常用的gdb命令：
+```
+c continues execution (Ctrl + C stops it again)
+bt prints the C stack trace
+py-bt prints the Python stack trace
+py-bt-full prints both
+py-list lists the current Python source code
+py-up/py-down moves one Python frame up or down
+py-locals shows local variables in the current frame
+py-print <var> prints the representation of a variable in the current frame
+info threads displays all threads
+thread <id> switches current thread to thread number <id>
+thread apply all <cmd> applies <cmd> to all threads, e.g., thread apply all py-list
+python MAX_OUTPUT_LEN=<N> sets the length after which the output of a Python value is truncated (default is 1024)
+```
+
+#### 抓取core的方法（未经测试）
+```
+1. Find the pid:
+pgrep -af <name>
+2. Generate core dump:
+gcore <pid>
+This will stop the program while creating the core dump, which might take a few seconds.
+3. Start the debugger:
+gdb python <core_file> or gdb python3 <core_file>, depending on the programs Python version
+4. Use the usual gdb commands to investigate the state of the program, see above.
+```
+
 docker命令
 ---------
 从镜像启动容器
@@ -102,7 +149,7 @@ vim8原生插件管理使用
 NerdTree使用方法：
 
 NERDTree的常用快捷键，[详细命令](https://www.jianshu.com/p/28bd9def1235)：
-
+```
 F3：自定义启用/隐藏目录树
 
 ?: 快速帮助文档
@@ -158,5 +205,5 @@ f: 打开和关闭文件过滤器
 q: 关闭NERDTree
 
 A: 全屏显示NERDTree，或者关闭全屏
-
+```
 
