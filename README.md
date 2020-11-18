@@ -36,6 +36,13 @@ python MAX_OUTPUT_LEN=<N> sets the length after which the output of a Python val
 ```
 
 #### 抓取core的方法（未经测试）
+
+1. 使用 ulimit -c 查看core开关，如果为0表示关闭，不会生成core文件；
+
+2. 使用 ulimit -c [filesize] 设置core文件大小，当最小设置为4之后才会生成core文件；
+
+3. 使用 ulimit -c unlimited 设置core文件大小为不限制，这是常用的做法；
+
 ```
 1. Find the pid:
 pgrep -af <name>
