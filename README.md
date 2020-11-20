@@ -217,11 +217,12 @@ A: 全屏显示NERDTree，或者关闭全屏
 pip使用清华源
 -----------------
 #### 临时使用
+
     $ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
 #### 设为默认（推荐）
 
 ```
-    pip install pip -U
-    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip install pip -U
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
