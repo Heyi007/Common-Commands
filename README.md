@@ -220,7 +220,8 @@ pip使用清华源
     $ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
 #### 设为默认（推荐）
-    ```
+
+```
     pip install pip -U
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-    ````
+```
