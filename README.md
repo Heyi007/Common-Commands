@@ -56,6 +56,11 @@ gdb python <core_file> or gdb python3 <core_file>, depending on the programs Pyt
 
 docker命令
 ---------
+
+linux内核或显卡驱动升级后，docker启动失败解决方法：
+[更新yum](https://github.com/NVIDIA/nvidia-docker/issues/836#issuecomment-428450111)
+[安装nvidia-container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
+
 从镜像启动容器
 
     $ docker run --ipc host --gpus all --entrypoint=/bin/bash \
