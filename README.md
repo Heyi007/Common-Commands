@@ -150,7 +150,7 @@ Horovod安装方法
 
 保险起见，需要安装[Nvidia-Docker](https://github.com/NVIDIA/nvidia-docker)。
 
-vim8原生插件管理使用
+[vim8原生插件管理使用](https://blog.csdn.net/qq_27825451/article/details/100557133)
 ----------------------
 `mkdir ~/.vim/pack/[name]/[start, opt]`
 
