@@ -63,6 +63,11 @@ linux内核或显卡驱动升级后，docker启动失败解决方法：
 
 从镜像启动容器
 
+完整版：
+```
+docker run --ipc host --gpus all --entrypoint=/bin/bash -it -d -v /home:/home --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -p 0.0.0.0:80:80 --name hy_autosparseDL_3 cr.d.xiaomi.net/ai.aml/tensorflow-dev:latest
+```
+
     $ docker run --ipc host --gpus all --entrypoint=/bin/bash \
     $ -it -d -v [local mount dir]:[target dir in docker] -p 0.0.0.0:[port]:[target port]\
     $ -e TZ=Asia/Beijing --name [name] [docker image]
