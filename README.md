@@ -64,7 +64,7 @@ linux内核或显卡驱动升级后，docker启动失败解决方法：
 从镜像启动容器
 
     $ docker run --ipc host --gpus all --entrypoint=/bin/bash \
-    $ -it -d -v [local mount dir]:[target dir in docker] -p [ip]:[port]:[target port]\
+    $ -it -d -v [local mount dir]:[target dir in docker] -p 0.0.0.0:[port]:[target port]\
     $ -e TZ=Asia/Beijing --name [name] [docker image]
 
 启动gdb调试
